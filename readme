@@ -1,0 +1,4 @@
+>> SET CLOSE LID TO DO NOTHING <<
+ sudoedit /etc/UPower/UPower.conf
+ IgnoreLid=true
+ restart device
