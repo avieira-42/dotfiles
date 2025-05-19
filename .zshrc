@@ -13,6 +13,8 @@ ZSH_THEME="robbyrussell"
 								# ALIASES #
 alias wifi='nmcli radio wifi'
 alias clipboard='xclip -selection clipboard'
+alias gpuoff='sudo nvidia-smi drain -p 0000:01:00.0 -m 1'
+alias gpuon='sudo nvidia-smi drain -p 0000:01:00.0 -m 0'
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
