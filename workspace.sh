@@ -1,0 +1,13 @@
+#!/bin/bash
+sudo apt install vim
+sudo apt install tmux
+sudo apt install xclip
+sudo apt install curl
+sudo apt install zsh
+sudo apt install net-tools
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+cp images/sea2.jpg ~/Pictures/
+gsettings set org.gnome.desktop.background picture-uri "file:///home/a-soeiro/Pictures/sea2.jpg"
+cp dotfiles/.tmux.conf  ~/ 
+cp dotfiles/.vimrc ~/
+cp dotfiles/.zshrc ~/
