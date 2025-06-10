@@ -11,10 +11,17 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="robbyrussell"
 
 								# ALIASES #
+
 alias wifi='nmcli radio wifi'
 alias clipboard='xclip -selection clipboard'
 alias gpuoff='sudo nvidia-smi drain -p 0000:01:00.0 -m 1'
 alias gpuon='sudo nvidia-smi drain -p 0000:01:00.0 -m 0'
+
+								# DEFAULTS #
+
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+  tmux attach-session -t default || tmux new-session -s default
+fi
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load

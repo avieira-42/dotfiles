@@ -14,8 +14,14 @@ set bg=dark
 
 inoremap jj <Esc>
 
-"PLUGINS -> PlugInstall"
-call plug#begin('~/.vim/plugged')
-Plug 'octol/vim-cpp-enhanced-highlight'
-call plug#end()
+""" PLUGINSJ -> PlugInstall/PlugClean
 
+call plug#begin('~/.vim/plugged')
+
+Plug 'octol/vim-cpp-enhanced-highlight'
+
+Plug 'vim-scripts/TagHighlight', { 'for': ['c', 'cpp'] }
+"Commands -> :UpdateTypesFile (builds/refreshes the syntax file)
+"		  -> :EnableTagHighlight ((re)loads it for the current buffer)
+
+call plug#end()
