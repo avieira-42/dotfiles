@@ -2,6 +2,10 @@
 sudo apt install clang -y
 sudo apt install make -y
 sudo apt update -y
+sudo apt install python3-setuptools -y
+sudo apt install pipx -y
+pipx install norminette -y
+pipx ensurepath -y
 sudo apt install vim -y
 sudo apt install tmux -y
 sudo apt install xclip -y
