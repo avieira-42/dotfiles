@@ -1,13 +1,17 @@
 #!/bin/bash
-sudo apt install vim
-sudo apt install tmux
-sudo apt install xclip
-sudo apt install curl
-sudo apt install zsh
-sudo apt install net-tools
+sudo apt update -y
+sudo apt install vim -y
+sudo apt install tmux -y
+sudo apt install xclip -y
+sudo apt install curl -y
+sudo apt install zsh -y
+sudo apt install net-tools -y
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 cp images/sea2.jpg ~/Pictures/
 gsettings set org.gnome.desktop.background picture-uri-dark 'file:///home/a-soeiro/Pictures/sea2.jpg'
 cp dotfiles/.tmux.conf  ~/ 
 cp dotfiles/.vimrc ~/
 cp dotfiles/.zshrc ~/
+sudo apt-get update && sudo apt-get install -y exuberant-ctags
+vim TerminalPallete
+gnome-session-quit

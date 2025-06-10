@@ -13,3 +13,9 @@ set bg=dark
 :nmap <Space>f :vs . <Enter>
 
 inoremap jj <Esc>
+
+"PLUGINS -> PlugInstall"
+call plug#begin('~/.vim/plugged')
+Plug 'octol/vim-cpp-enhanced-highlight'
+call plug#end()
+
