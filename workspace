@@ -13,6 +13,8 @@ sudo apt install curl -y
 sudo apt install zsh -y
 sudo apt install net-tools -y
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+	  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 cp images/sea2.jpg ~/Pictures/
 gsettings set org.gnome.desktop.background picture-uri-dark 'file:///home/a-soeiro/Pictures/sea2.jpg'
 cp dotfiles/.tmux.conf  ~/ 
