@@ -11,7 +11,7 @@ set bg=dark
 :nmap <Space>r :%s//
 :nmap <Space>rl :*:s//r/g
 :nmap <Space>f :vs . <Enter>
-:nmap <Space>u :UpdateTypesFile
+:nmap <Space>u :UpdateTypesFile <Enter>
 
 inoremap jj <Esc>
 
