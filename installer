@@ -1,26 +1,67 @@
 #!/bin/bash
-sudo apt install clang -y
-sudo apt install make -y
+
+# update packages
 sudo apt update -y
+sudo apt update
+
+# clang
+sudo apt install clang -y
+
+# make
+sudo apt install make -y
+
+# python
 sudo apt install python3-setuptools -y
+
+# pipx
 sudo apt install pipx -y
+
+# norminette
 pipx install norminette -y
 pipx ensurepath -y
+# nvim
+
 chmod u+x neovim/nvim-linux-x86_64.appimage
 sudo mv neovim/nvim-linux-x86_64.appimage /usr/local/bin/nvim
-git clone https://github.com/nvim-lua/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
+
+# tmux
 sudo apt install tmux -y
+
+# xclip
 sudo apt install xclip -y
+
+# curl
 sudo apt install curl -y
+
+# zsh
 sudo apt install zsh -y
+
+# net-tools
 sudo apt install net-tools -y
+
+# ripgrep
 sudo apt install ripgrep
-git clone --depth 1 https://github.com/wbthomason/packer.nvim\
- ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+
+# lua
+sudo apt install lua5.3 liblua5.3-dev
+wget https://luarocks.org/releases/luarocks-3.12.2.tar.gz
+tar zxpf luarocks-3.12.2.tar.gz
+cd luarocks-3.12.2
+./configure && make && sudo make install
+sudo luarocks install luasocket
+lua
+require "socket"
+
+# zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-cp images/sea2.jpg ~/Pictures/
-gsettings set org.gnome.desktop.background picture-uri-dark 'file:///home/a-soeiro/Pictures/sea2.jpg'
-cp dotfiles/.tmux.conf  ~/ 
+
+# move dotfiles
+cp dotfiles/.tmux.conf ~/ 
 cp dotfiles/.zshrc ~/
+cp neovim_config/nvim_lazy/nvim/ ~/
+
+# open terminal pallete
 vim TerminalPallete
+
+# prompt restart
 gnome-session-quit
