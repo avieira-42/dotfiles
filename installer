@@ -58,7 +58,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 # move dotfiles
 cp dotfiles/.tmux.conf ~/ 
 cp dotfiles/.zshrc ~/
-cp neovim_config/nvim_lazy/nvim/ ~/
+cp neovim_config/nvim/ ~/
 
 # open terminal pallete
 vim TerminalPallete
