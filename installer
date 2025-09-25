@@ -42,6 +42,26 @@ sudo apt install net-tools -y
 # ripgrep
 sudo apt install ripgrep
 
+# super key remaps
+# Clear window tiling/moving defaults
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-left "[]"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-right "[]"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-up "[]"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-down "[]"
+# Clear tiling-assistant or any extension shortcuts
+gsettings set org.gnome.shell.extensions.tiling-assistant tile-left-half "[]"
+gsettings set org.gnome.shell.extensions.tiling-assistant tile-right-half "[]"
+gsettings set org.gnome.shell.extensions.tiling-assistant tile-top-half "[]"
+gsettings set org.gnome.shell.extensions.tiling-assistant tile-bottom-half "[]"
+ggsettings set org.gnome.settings-daemon.plugins.media-keys screensaver "[]"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left "[]"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right "[]"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-up "[]"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-down "[]"
+gsettings set org.gnome.desktop.lockdown disable-lock-screen true
+
+sudo apt install wmctrl xdotool
+
 # lua
 sudo apt install lua5.3 liblua5.3-dev
 wget https://luarocks.org/releases/luarocks-3.12.2.tar.gz

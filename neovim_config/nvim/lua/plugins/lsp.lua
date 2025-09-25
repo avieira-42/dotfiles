@@ -73,6 +73,13 @@ return {
         vim.keymap.set("n", "gl", vim.diagnostic.open_float, opts)
         vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts)
         vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts)
+
+        -- Enable auto signature help from plugin (no panda inline hints)
+        require("lsp_signature").on_attach({
+          bind = true,
+          handler_opts = { border = "rounded" },
+          hint_enable = false, -- disable inline hints, only popup
+        }, bufnr)
       end
 
       -- Capabilities (autocomplete support)
@@ -86,7 +93,7 @@ return {
       local lspconfig = require("lspconfig")
 
       lspconfig.clangd.setup({
-        cmd = { "clangd", "--background-index", "--clang-tidy" },
+        cmd = { "clangd", "--background-index", "--clang-tidy", "--compile-commands-dir=build" },
         on_attach = on_attach,
         capabilities = capabilities,
       })
@@ -102,5 +109,15 @@ return {
       })
     end,
   },
+  {
+    "ray-x/lsp_signature.nvim",
+    event = "LspAttach",
+    config = function()
+      require("lsp_signature").setup({
+        bind = true,
+        handler_opts = { border = "rounded" },
+        hint_enable = false, -- disable inline hints globally too
+      })
+    end,
+  },
 }
-

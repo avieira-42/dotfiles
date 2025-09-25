@@ -45,8 +45,8 @@ function ColorMyPencils(color)
 			hi! @statement guifg=#B34C1A
 			hi! @todo guifg=#00FF88 guibg=#22062B
 			hi! @punctuation.bracket guifg=#66447A
-			hi! @punctuation.delimiter guifg=#763377
-			hi! @punctuation.special guifg=#450B8F
+			hi! @punctuation.delimiter guifg=#66447A
+			hi! @punctuation.special guifg=#763377
 			hi! @constructor guifg=#66447A
 			]]
 		end,
