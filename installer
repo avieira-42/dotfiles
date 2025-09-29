@@ -1,11 +1,16 @@
 #!/bin/bash
 
+#git
+git config --global user.name "avieira-42"
+git config --global user.email "vieiramendesalex@gmail.com"
+
 # update packages
 sudo apt update -y
 sudo apt update
 
 # clang
 sudo apt install clang -y
+sudo apt install gcc -y
 
 # make
 sudo apt install make -y
@@ -19,10 +24,10 @@ sudo apt install pipx -y
 # norminette
 pipx install norminette -y
 pipx ensurepath -y
-# nvim
 
-chmod u+x neovim/nvim-linux-x86_64.appimage
-sudo mv neovim/nvim-linux-x86_64.appimage /usr/local/bin/nvim
+# nvim
+chmod u+x neovim/nvim-linux-x86_64/bin/nvim
+sudo cp -r neovim/nvim-linux-x86_64/bin/nvim /usr/local/bin/nvim
 
 # tmux
 sudo apt install tmux -y
@@ -35,12 +40,14 @@ sudo apt install curl -y
 
 # zsh
 sudo apt install zsh -y
+rm -rf ~/.oh-my-zsh
+sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 
 # net-tools
 sudo apt install net-tools -y
 
 # ripgrep
-sudo apt install ripgrep
+sudo apt install ripgrep -y
 
 # super key remaps
 # Clear window tiling/moving defaults
@@ -60,28 +67,19 @@ gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-up "[]"
 gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-down "[]"
 gsettings set org.gnome.desktop.lockdown disable-lock-screen true
 
-sudo apt install wmctrl xdotool
+sudo apt install wmctrl xdotool -y
 
-# lua
-sudo apt install lua5.3 liblua5.3-dev
-wget https://luarocks.org/releases/luarocks-3.12.2.tar.gz
-tar zxpf luarocks-3.12.2.tar.gz
-cd luarocks-3.12.2
-./configure && make && sudo make install
-sudo luarocks install luasocket
-lua
-require "socket"
+# kickstart
+git clone https://github.com/nvim-lua/kickstart.nvim.git kickstart
 
 # zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # move dotfiles
-cp dotfiles/.tmux.conf ~/ 
-cp dotfiles/.zshrc ~/
-cp neovim_config/nvim/ ~/
+cp -r ~/repos/dotfiles/dotfiles/.* ~/
 
 # open terminal pallete
-vim TerminalPallete
+vi TerminalPallete
 
 # prompt restart
 gnome-session-quit

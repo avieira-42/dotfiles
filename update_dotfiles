@@ -1,2 +1,3 @@
 #!/bin/bash
-cp -r dotfiles/.* ~/
+sudo cp -r dotfiles/.* ~/
+sudo cp -r ~/repos/dotfiles/neovim/nvim/ ~/.config/nvim
