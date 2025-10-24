@@ -78,6 +78,10 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 # move dotfiles
 cp -r ~/repos/dotfiles/dotfiles/.* ~/
 
+# disable ubuntu docker
+cd /usr/share/gnome-shell/extensions/
+sudo mv ubuntu-dock@ubuntu.com(,.bak)
+
 # open terminal pallete
 vi TerminalPallete
 
