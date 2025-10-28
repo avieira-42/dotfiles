@@ -25,6 +25,15 @@ sudo apt install pipx -y
 pipx install norminette -y
 pipx ensurepath -y
 
+#sdl
+sudo apt update
+sudo apt install libsdl2-dev libsdl2-mixer-dev
+sudo apt install libsdl2-image-dev libsdl2-ttf-dev
+
+#glad
+sudo apt update
+sudo apt install libglfw3-dev
+
 # nvim
 chmod u+x neovim/nvim-linux-x86_64/bin/nvim
 sudo cp -r neovim/nvim-linux-x86_64/bin/nvim /usr/local/bin/nvim
