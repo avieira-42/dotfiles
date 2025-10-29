@@ -16,6 +16,7 @@ alias wifi='nmcli radio wifi'
 alias clipboard='xclip -selection clipboard'
 alias gpuoff='sudo nvidia-smi drain -p 0000:01:00.0 -m 1'
 alias gpuon='sudo nvidia-smi drain -p 0000:01:00.0 -m 0'
+alias nvidia='__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia'
 alias vim='nvim'
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 								# DEFAULTS #
