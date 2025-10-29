@@ -1,0 +1,3 @@
+#!/bin/bash
+
+cp opengl_manuals/* ~/usr/share/man/man3
